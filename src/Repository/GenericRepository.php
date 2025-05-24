@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 namespace Backendbase\Doctrine\Repository;
 
+use AutoMapper\AutoMapper;
 use Backendbase\Doctrine\DoctrineEntity;
 use Backendbase\Doctrine\EntityId;
+use Backendbase\Doctrine\FQCN;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Query\QueryBuilder as DBALQueryBuilder;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
-use Backendbase\Doctrine\FQCN;
-use AutoMapper\AutoMapper;
 
 use function array_unshift;
 use function implode;
 use function in_array;
 use function is_array;
+use function is_numeric;
 use function is_string;
 use function str_contains;
 use function str_replace;
@@ -25,13 +26,15 @@ use function ucfirst;
 readonly class GenericRepository implements \Backendbase\Doctrine\GenericRepository
 {
     protected AutoMapper $autoMapper;
+
     public function __construct(protected EntityManagerInterface $entityManager, protected array $settings)
     {
         $cacheDir = null;
         if (isset($settings['cacheDirectory'])) {
             $cacheDir = $settings['cacheDirectory'];
         }
-        $this->autoMapper = AutoMapper::create(cacheDirectory: $cacheDir );
+
+        $this->autoMapper = AutoMapper::create(cacheDirectory: $cacheDir);
     }
 
     public function getEntityManager(): EntityManagerInterface
@@ -44,34 +47,37 @@ readonly class GenericRepository implements \Backendbase\Doctrine\GenericReposit
         return $this->entityManager
             ->getConnection();
     }
-    public function getQueryBuilder(): QueryBuilder {
+
+    public function getQueryBuilder(): QueryBuilder
+    {
         return $this->entityManager
             ->createQueryBuilder();
     }
 
-    public function getDBALQueryBuilder(): DBALQueryBuilder {
+    public function getDBALQueryBuilder(): DBALQueryBuilder
+    {
         return $this->entityManager
             ->getConnection()
             ->createQueryBuilder();
     }
+
     public function getById(FQCN $entityFQCN, EntityId $id): DoctrineEntity|null
     {
         $criteria = [
-            'id' => $id->toValue()
+            'id' => $id->toValue(),
         ];
+
         return $this->entityManager->getRepository($entityFQCN->toString())
             ->findOneBy($criteria);
     }
 
     public function getIdFromUuid(FQCN $entityFQCN, string $uuid, FQCN $entityIdFQCN): string|int|null
     {
-        $criteria = [
-            'uuid' => $uuid
-        ];
-        $id = $this->getPartialByCriteria(
+        $criteria = ['uuid' => $uuid];
+        $id       = $this->getPartialByCriteria(
             $entityFQCN->toString(),
             $criteria,
-            ['id']
+            ['id'],
         );
         if ($id === null) {
             return null;

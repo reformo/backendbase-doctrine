@@ -5,15 +5,18 @@ declare(strict_types=1);
 namespace Backendbase\Doctrine;
 
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\QueryBuilder as DBALQueryBuilder;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
-use Doctrine\DBAL\Query\QueryBuilder as DBALQueryBuilder;
+
 interface GenericRepository
 {
     public function getEntityManager(): EntityManagerInterface;
 
     public function getConnection(): Connection;
+
     public function getQueryBuilder(): QueryBuilder;
+
     public function getDBALQueryBuilder(): DBALQueryBuilder;
 
     public function getIdFromUuid(FQCN $entityFQCN, string $uuid, FQCN $entityIdFQCN): string|int|null;

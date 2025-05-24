@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Backendbase\Doctrine;
 
 use DateTimeImmutable;
+use DateTimeZone;
 use Doctrine\ORM\Mapping\PrePersist;
 
 use function get_object_vars;
@@ -16,7 +17,7 @@ trait DoctrineEntityMethods
     #[PrePersist]
     public function setCreatedAtValue(): void
     {
-        $this->createdAt = new DateTimeImmutable('now', new \DateTimeZone('UTC'));
+        $this->createdAt = new DateTimeImmutable('now', new DateTimeZone('UTC'));
     }
 
     public function toArray(array|null $excludeColumns = [], bool|null $includeDeletedAt = false, bool|null $getId = false): array

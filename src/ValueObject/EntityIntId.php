@@ -7,6 +7,7 @@ namespace Backendbase\Doctrine\ValueObject;
 use Backendbase\Doctrine\EntityId;
 use Backendbase\Doctrine\Exception\InvalidIdValue;
 use Ramsey\Uuid\UuidInterface;
+
 use function is_int;
 
 readonly class EntityIntId implements EntityId
