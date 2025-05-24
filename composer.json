@@ -1,0 +1,41 @@
+{
+    "name": "reformo/backendbase-doctrine",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Backendbase\\Doctrine\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mehmet Korkmaz",
+            "email": "mehmet@mkorkmaz.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.4",
+        "ramsey/uuid": "^4.7.6",
+        "doctrine/dbal": "^4.2.3",
+        "doctrine/orm": "^3.3.3",
+        "ramsey/uuid-doctrine": "^2.1.0",
+        "jolicode/automapper": "^9.3"
+    },
+    "require-dev": {
+        "malukenho/mcbumpface": "^1.2.0",
+        "doctrine/coding-standard": "^13.0.1",
+        "roave/security-advisories": "dev-latest"
+    },
+    "config": {
+        "allow-plugins": {
+            "malukenho/mcbumpface": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+
+        "cs-check": "vendor/bin/phpcs",
+        "cs-fix": "vendor/bin/phpcbf -e -a"
+    }
+}
