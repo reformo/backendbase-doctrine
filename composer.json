@@ -16,11 +16,11 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8.4",
-        "ramsey/uuid": "^4.7.6",
-        "doctrine/dbal": "^4.2.3",
-        "doctrine/orm": "^3.3.3",
+        "ramsey/uuid": "^4.9.0",
+        "doctrine/dbal": "^4.3.2",
+        "doctrine/orm": "^3.5.2",
         "ramsey/uuid-doctrine": "^2.1.0",
-        "jolicode/automapper": "^9.3"
+        "jolicode/automapper": "^9.4.1"
     },
     "require-dev": {
         "malukenho/mcbumpface": "^1.2.0",
