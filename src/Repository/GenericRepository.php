@@ -30,7 +30,7 @@ readonly class GenericRepository implements \Backendbase\Doctrine\GenericReposit
     public function __construct(protected EntityManagerInterface $entityManager, protected array $settings)
     {
         $cacheDir = null;
-        if (isset($settings['cacheDirectory'])) {
+        if (!empty($settings['cacheDirectory'])) {
             $cacheDir = $settings['cacheDirectory'];
         }
 
