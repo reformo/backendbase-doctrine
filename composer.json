@@ -1,48 +1,49 @@
 {
-    "name": "reformo/backendbase-doctrine",
-    "type": "library",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Backendbase\\Doctrine\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Mehmet Korkmaz",
-            "email": "mehmet@mkorkmaz.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "php": "^8.4",
-        "ramsey/uuid": "^4.9.0",
-        "doctrine/dbal": "^4.3.2",
-        "doctrine/orm": "^3.5.2",
-      "doctrine/annotations": "^2.0.2",
-      "doctrine/cache": "^2.2.0",
-      "doctrine/collections": "^2.3.0",
-      "doctrine/lexer": "^3.0.1",
-      "doctrine/migrations": "^3.9.4",
-      "beberlei/doctrineextensions": "^v1.5.0",
-      "ramsey/uuid-doctrine": "^2.1.0",
-        "jolicode/automapper": "^9.4.1"
-    },
-    "require-dev": {
-      "mongodb/mongodb": "^2.1.1",
-        "malukenho/mcbumpface": "^1.2.0",
-        "doctrine/coding-standard": "^13.0.1",
-        "roave/security-advisories": "dev-latest"
-    },
-    "config": {
-        "allow-plugins": {
-            "malukenho/mcbumpface": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    },
-    "scripts": {
-
-        "cs-check": "vendor/bin/phpcs",
-        "cs-fix": "vendor/bin/phpcbf -e -a"
+  "name": "reformo/backendbase-doctrine",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Backendbase\\Doctrine\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Mehmet Korkmaz",
+      "email": "mehmet@mkorkmaz.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.4",
+    "ramsey/uuid": "^4.9.0",
+    "doctrine/dbal": "^4.3.2",
+    "doctrine/orm": "^3.5.2",
+    "doctrine/annotations": "^2.0.2",
+    "doctrine/cache": "^2.2.0",
+    "doctrine/collections": "^2.3.0",
+    "doctrine/lexer": "^3.0.1",
+    "doctrine/migrations": "^3.9.4",
+    "beberlei/doctrineextensions": "^v1.5.0",
+    "dunglas/doctrine-json-odm": "^v1.4.2",
+    "scienta/doctrine-json-functions": "^6.3.0",
+    "ramsey/uuid-doctrine": "^2.1.0",
+    "jolicode/automapper": "^9.4.1"
+  },
+  "require-dev": {
+    "mongodb/mongodb": "^2.1.1",
+    "malukenho/mcbumpface": "^1.2.0",
+    "doctrine/coding-standard": "^13.0.1",
+    "roave/security-advisories": "dev-latest"
+  },
+  "config": {
+    "allow-plugins": {
+      "malukenho/mcbumpface": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "cs-check": "vendor/bin/phpcs",
+    "cs-fix": "vendor/bin/phpcbf -e -a"
+  }
 }
