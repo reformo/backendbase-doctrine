@@ -8,6 +8,7 @@ use AutoMapper\AutoMapper;
 use Backendbase\Doctrine\DoctrineEntity;
 use Backendbase\Doctrine\EntityId;
 use Backendbase\Doctrine\FQCN;
+use Backendbase\Doctrine\ValueObject\DoctrineRepositorySettings;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Query\QueryBuilder as DBALQueryBuilder;
 use Doctrine\ORM\EntityManagerInterface;
@@ -27,7 +28,7 @@ readonly class GenericRepository implements \Backendbase\Doctrine\GenericReposit
 {
     protected AutoMapper $autoMapper;
 
-    public function __construct(protected EntityManagerInterface $entityManager, protected array $settings)
+    public function __construct(protected EntityManagerInterface $entityManager, protected DoctrineRepositorySettings $settings)
     {
         $cacheDir = null;
         if (!empty($settings['cacheDirectory'])) {
