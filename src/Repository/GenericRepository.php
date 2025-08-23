@@ -31,8 +31,8 @@ readonly class GenericRepository implements \Backendbase\Doctrine\GenericReposit
     public function __construct(protected EntityManagerInterface $entityManager, protected DoctrineRepositorySettings $settings)
     {
         $cacheDir = null;
-        if (!empty($settings['cacheDirectory'])) {
-            $cacheDir = $settings['cacheDirectory'];
+        if (!empty($settings->cacheDirectory())) {
+            $cacheDir = $settings->cacheDirectory();
         }
 
         $this->autoMapper = AutoMapper::create(cacheDirectory: $cacheDir);
