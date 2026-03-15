@@ -11,7 +11,7 @@ use Ramsey\Uuid\UuidInterface;
 
 use function is_int;
 
-readonly class EntityUuidId implements EntityId
+readonly class EntityUuidV7Id implements EntityId
 {
     public function __construct(private UuidInterface $id)
     {
@@ -34,10 +34,16 @@ readonly class EntityUuidId implements EntityId
         }
 
         if ($id instanceof UuidInterface) {
-            return new self($id);
+            $uuid =  $id;
+        } else {
+            $uuid = Uuid::fromString($id);
         }
 
-        return new self(Uuid::fromString($id));
+        if ($uuid->getFields()->getVersion() !== 7) {
+            throw new InvalidIdValue('Invalid UUID v7 value. : ' . $id->toString());
+        }
+
+        return new self($uuid);
     }
 
     public function toValue(): string|int

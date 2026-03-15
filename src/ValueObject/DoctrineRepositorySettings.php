@@ -8,13 +8,10 @@ readonly class DoctrineRepositorySettings
 {
     public function __construct(private string|null $cacheDirectory)
     {
-
     }
 
-    public function cacheDirectory(): ?string
+    public function cacheDirectory(): string|null
     {
         return $this->cacheDirectory;
     }
-
-
 }
