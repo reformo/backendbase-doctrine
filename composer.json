@@ -26,7 +26,7 @@
     "dunglas/doctrine-json-odm": "^v1.5.0",
     "scienta/doctrine-json-functions": "^6.5.0",
     "ramsey/uuid-doctrine": "^2.1.0",
-    "jolicode/automapper": "^9.5.0"
+    "jolicode/automapper": "^10.0.3"
   },
   "require-dev": {
     "malukenho/mcbumpface": "^1.2.0",
