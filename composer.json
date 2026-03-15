@@ -15,26 +15,26 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": "^8.4",
-    "ramsey/uuid": "^4.9.0",
-    "doctrine/dbal": "^4.3.2",
-    "doctrine/orm": "^3.5.2",
+    "php": "^8.5",
+    "ramsey/uuid": "^4.9.2",
+    "doctrine/dbal": "^4.4.2",
+    "doctrine/orm": "^3.6.2",
     "doctrine/annotations": "^2.0.2",
     "doctrine/cache": "^2.2.0",
-    "doctrine/collections": "^2.3.0",
+    "doctrine/collections": "^2.6.0",
     "doctrine/lexer": "^3.0.1",
-    "doctrine/migrations": "^3.9.4",
+    "doctrine/migrations": "^3.9.6",
     "beberlei/doctrineextensions": "^v1.5.0",
-    "dunglas/doctrine-json-odm": "^v1.4.2",
-    "scienta/doctrine-json-functions": "^6.3.0",
+    "dunglas/doctrine-json-odm": "^v1.5.0",
+    "scienta/doctrine-json-functions": "^6.5.0",
     "ramsey/uuid-doctrine": "^2.1.0",
-    "jolicode/automapper": "^9.4.1"
+    "jolicode/automapper": "^9.5.0"
   },
   "require-dev": {
-    "mongodb/mongodb": "^2.1.1",
+    "mongodb/mongodb": "^2.2.0",
     "malukenho/mcbumpface": "^1.2.0",
-    "doctrine/coding-standard": "^13.0.1",
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "doctrine/coding-standard": "^14.0"
   },
   "config": {
     "allow-plugins": {
