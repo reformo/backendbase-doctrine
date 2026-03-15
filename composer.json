@@ -19,8 +19,6 @@
     "ramsey/uuid": "^4.9.2",
     "doctrine/dbal": "^4.4.2",
     "doctrine/orm": "^3.6.2",
-    "doctrine/annotations": "^2.0.2",
-    "doctrine/cache": "^2.2.0",
     "doctrine/collections": "^2.6.0",
     "doctrine/lexer": "^3.0.1",
     "doctrine/migrations": "^3.9.6",
@@ -31,10 +29,9 @@
     "jolicode/automapper": "^9.5.0"
   },
   "require-dev": {
-    "mongodb/mongodb": "^2.2.0",
     "malukenho/mcbumpface": "^1.2.0",
     "roave/security-advisories": "dev-latest",
-    "doctrine/coding-standard": "^14.0"
+    "doctrine/coding-standard": "^14.0.0"
   },
   "config": {
     "allow-plugins": {
